@@ -1,9 +1,9 @@
-This prpject can help you interact with ragflow(https://github.com/infiniflow/ragflow) using the api method.Tested with ragflow v0.19.0.
+This project can help you interact with ragflow(https://github.com/infiniflow/ragflow) using the API method. Tested with ragflow v0.19.0.
 
 how to use it:
 Install-Package RAGFlowClient
 
-Sample code for console applcation:
+Sample code for console application:
 ```
 var host = Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
               {
@@ -18,9 +18,9 @@ ragFlowApi.Dataset.CreateDataset("<datasetname>");
 
 ```
 
-Exception: Will throw RagFlowException when the api call failed.
+Exception: Will throw RagFlowException when the API call failed.
 
-Currently,support the following methods:
+Currently, support the following methods:
 1. Dataset Api
 - Task<DatasetDto?> CreateDataset(string datasetName);
 - Task<DatasetDto?> CreateDataset(DatasetRequest request);
