@@ -1,4 +1,4 @@
-This project can help you interact with ragflow(https://github.com/infiniflow/ragflow) using the API method. Tested with ragflow v0.19.0.
+﻿This project can help you interact with ragflow(https://github.com/infiniflow/ragflow) using the API method. Tested with ragflow v0.19.0.
 
 how to use it:
 Install-Package RAGFlowClient

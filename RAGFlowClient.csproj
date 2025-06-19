@@ -9,6 +9,7 @@
 		<PackageProjectUrl>https://github.com/ginohuo/RAGFlowClient</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ginohuo/RAGFlowClient</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
@@ -29,15 +30,9 @@
 		<PackageReference Include="System.Text.Json" Version="9.0.6" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="License.md" />
 	  <None Remove="README.md" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Content Include="License.md">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
-	  </Content>
 	  <Content Include="README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
