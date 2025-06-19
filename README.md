@@ -1,8 +1,10 @@
 ﻿This prpject can help you interact with ragflow(https://github.com/infiniflow/ragflow) using the api method.Tested with ragflow v0.19.0.
+
 how to use it:
 Install-Package RAGFlowClient
+
 Sample code for console applcation:
-######
+```
 var host = Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
               {
                   services.AddRagFlowService(options =>
@@ -13,7 +15,9 @@ var host = Host.CreateDefaultBuilder().ConfigureServices((context, services) =>
               }).Build();
 var ragFlowApi = host.Services.GetRequiredService<RagFlowApi>();
 ragFlowApi.Dataset.CreateDataset("<datasetname>");
-######
+
+```
+
 Exception: Will throw RagFlowException when the api call failed.
 
 Currently,support the following methods:
@@ -23,6 +27,7 @@ Task<DatasetDto?> CreateDataset(DatasetRequest request);
 Task<bool> DeleteDatasets(List<string> datasetIds);
 Task<bool> UpdateDataset(string datasetId, DatasetRequest request);
 Task<List<DatasetDto>?> ListDataset(string? id = null, string? name = null, RagFlowPagingRequest? pagingRequest = null);
+
 2. Document Api
 Task<List<DocumentSummaryDto>?> UploadDocuments(string datasetId, List<string> filePathList);
 Task<bool> DownloadDocument(string datasetId, string documentId, string filePathNameForSave);
@@ -31,7 +36,8 @@ Task<DocumentListResponse?> ListDocuments(string datasetId, string? keywords = n
 Task<bool> DeleteDocuments(string datasetId, List<string> documentIdList);
 Task<bool> ParseDocuments(string datasetId, List<string> documentIdList);
 Task<bool> StopParsingDocuments(string datasetId, List<string> documentIdList);
-3.Chunk Api
+
+3 .Chunk Api
 Task<ChunkAddResult?> AddChunk(string datasetId, string documentId, ChunkAddRequest request);
 Task<ChunkListResponse?> ListChunks(string datasetId, string documentId, string? keywords = null, string? chunkId = null, RagFlowPagingRequest? pagingRequest = null);
 Task<bool> DeleteChunks(string datasetId, string documentId, List<string> chunkIdList);
